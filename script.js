@@ -19,7 +19,7 @@ window.onscroll = () => {
     navlist.classList.remove("open");
 };
 
-// Smooth Scroll for Buttons
+// Smooth Scroll for Buttons (except Testimonial and Contact Us)
 document.querySelector(".btn2").addEventListener("click", function (e) {
     e.preventDefault(); // Prevent default link behavior
     document.querySelector("#destination").scrollIntoView({
@@ -31,5 +31,18 @@ document.querySelector(".btn").addEventListener("click", function (e) {
     e.preventDefault(); // Prevent default link behavior
     document.querySelector("#package").scrollIntoView({
         behavior: "smooth"
+    });
+});
+
+// Prevent Scroll on "Testimonial" and "Contact Us" (Remove smooth scroll behavior)
+document.querySelectorAll('a[href="#testimonial"], a[href="#contact"]').forEach((link) => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the smooth scroll for these sections
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            window.location.href = `#${targetId}`; // Navigate directly to the section
+        }
     });
 });
