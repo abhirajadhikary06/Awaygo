@@ -84,3 +84,27 @@ document.querySelector('.search-input').addEventListener('keypress', function(ev
         }
     }
 });
+
+// Smooth scroll to top
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.querySelector('.top');
+
+    // Show/Hide button based on scroll position
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.classList.add('show'); // Show button
+        } else {
+            scrollToTopButton.classList.remove('show'); // Hide button
+        }
+    });
+
+    // Smooth scroll effect when button is clicked
+    scrollToTopButton.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Smooth scroll
+        });
+    });
+});
+
