@@ -371,7 +371,7 @@ header.sticky {
     font-size: var(--h2-font);
     font-weight: 700;
     margin: 15px 0;
-    line-height: 1.4; /* Add space between lines of heading */
+    line-height: 1.2; /* Add space between lines of heading */
     word-wrap: break-word; /* Ensure long words don't overflow */
 }
 

@@ -52,11 +52,18 @@ document.querySelectorAll('a[href="#testimonial"], a[href="#contact"]').forEach(
     });
 });
 
-// Footer Links: Prevent moving to top and open a blank page
+// Footer Links: Prevent moving to top and open the page link or do nothing if no link is provided
 document.querySelectorAll('.footer-links a').forEach(link => {
     link.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent the default anchor behavior (scrolling or jumping)
-        // Open a blank page when clicked (can also redirect to another page)
-        window.open('about:blank', '_blank');
+        const href = this.getAttribute('href'); // Get the href value of the link
+
+        // If href is empty or the link doesn't point to a valid destination, prevent default action
+        if (!href || href === "#" || href === "" || href === "javascript:void(0)") {
+            e.preventDefault(); // Do nothing if no valid link
+        } else {
+            // Redirect to the given link if it's valid
+            window.location.href = href; // Navigate to the link's destination
+        }
     });
 });
+
