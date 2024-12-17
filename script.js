@@ -34,15 +34,22 @@ document.querySelector(".btn").addEventListener("click", function (e) {
     });
 });
 
-// Prevent Scroll on "Testimonial" and "Contact Us" (Remove smooth scroll behavior)
+// Prevent smooth scrolling for "Testimonial" and "Contact Us", and directly redirect
 document.querySelectorAll('a[href="#testimonial"], a[href="#contact"]').forEach((link) => {
     link.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent the smooth scroll for these sections
+        e.preventDefault(); // Prevent any default smooth scroll behavior
+        
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
         
         if (targetElement) {
-            window.location.href = `#${targetId}`; // Navigate directly to the section
+            // Directly redirect to the respective section (forces jump without scroll)
+            window.location.href = `#${targetId}`; // Changes URL and navigates to the section immediately
+        } else {
+            // In case the section doesn't exist, you can optionally redirect to another page
+            window.location.href = this.getAttribute('href');
         }
     });
 });
+
+
