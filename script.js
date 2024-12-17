@@ -85,3 +85,30 @@ document.querySelector('.search-input').addEventListener('keypress', function(ev
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const allImages = document.querySelectorAll('img');
+
+    // Convert `src` to `data-src` dynamically
+    allImages.forEach(img => {
+        const realSrc = img.getAttribute('src');
+        if (realSrc) {
+            img.setAttribute('data-src', realSrc); // Move the `src` to `data-src`
+            img.removeAttribute('src'); // Remove `src` to prevent immediate loading
+        }
+    });
+
+    // Lazy load logic
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.getAttribute('data-src'); // Load the real image
+                img.removeAttribute('data-src'); // Cleanup
+                observer.unobserve(img); // Stop observing
+            }
+        });
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
+});
