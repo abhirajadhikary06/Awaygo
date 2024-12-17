@@ -67,3 +67,21 @@ document.querySelectorAll('.footer-links a').forEach(link => {
     });
 });
 
+// Handling search functionality
+document.querySelector('.search-btn').addEventListener('click', function() {
+    const query = document.querySelector('.search-input').value;
+    if (query) {
+        alert('Searching for: ' + query);  // You can replace this with actual search logic
+    }
+});
+
+// Handling the Enter key for search
+document.querySelector('.search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        const query = event.target.value;
+        if (query) {
+            alert('Searching for: ' + query);  // You can replace this with actual search logic
+        }
+    }
+});
+

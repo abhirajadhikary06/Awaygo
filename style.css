@@ -82,30 +82,45 @@ section {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-image: url(img/bg1.png);
+    background-image: url(bg_image/background-1.jpg);
     background-size: cover;
     background-position: center;
     animation: slide 25s infinite;
 }
 
 @keyframes slide {
-    0% {
-        background-image: url(img/bg2.png);
+    10% {
+        background-image: url(bg_image/background-2.jpg);
     }
-    25% {
-        background-image: url(img/bg3.png);
+    20% {
+        background-image: url(bg_image/background-3.jpg);
+    }
+    30% {
+        background-image: url(bg_image/background-4.jpg);
+    }
+    40% {
+        background-image: url(bg_image/background-5.jpg);
     }
     50% {
-        background-image: url(img/bg4.png);
+        background-image: url(bg_image/background-6.jpg);
     }
     50% {
-        background-image: url(img/bg1.png);
+        background-image: url(bg_image/background-7.jpg);
     }
-    75% {
-        background-image: url(img/bg5.png);
+    60% {
+        background-image: url(bg_image/background-8.jpg);
+    }
+    70% {
+        background-image: url(bg_image/background-8.jpg);
+    }
+    80% {
+        background-image: url(bg_image/background-10.png);
+    }
+    90% {
+        background-image: url(bg_image/background-11.jpg);
     }
     100% {
-        background-image: url(img/bg1.png);
+        background-image: url(bg_image/background-12.png);
     }
 }
 
@@ -201,20 +216,47 @@ section {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;  /* Align to the left */
     gap: 7rem;
-
 }
 
-.h-row {
-    text-align: center;
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #257DE1;  /* Blue border for the search bar */
+    border-radius: 30px;
+    padding: 8px 16px;
+    background-color: transparent;  /* White background for the search bar */
+    width: 350px;  /* Increased width of the search bar */
+    height: 40px;  /* Reduced height (breadth) */
 }
 
-.h-row h6 {
-    font-size: 15px;
-    color: var(--bg-color);
-    font-weight: 500;
+.search-input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 100%;  /* Make the input fill the available width */
+    color: #ffffff;
+    padding-left: 10px;  /* Add space on the left for the icon */
+    height: 100%;  /* Match the height of the search bar */
+    background-color: transparent;
 }
+
+.search-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #257DE1;  /* Icon color */
+    margin-left: -30px;  /* Move the icon inside the input */
+}
+
+.search-btn:hover {
+    color: #1a64b0;
+}
+
 
 .arrow {
     position: absolute;
