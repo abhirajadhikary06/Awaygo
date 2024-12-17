@@ -52,4 +52,11 @@ document.querySelectorAll('a[href="#testimonial"], a[href="#contact"]').forEach(
     });
 });
 
-
+// Footer Links: Prevent moving to top and open a blank page
+document.querySelectorAll('.footer-links a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the default anchor behavior (scrolling or jumping)
+        // Open a blank page when clicked (can also redirect to another page)
+        window.open('about:blank', '_blank');
+    });
+});
