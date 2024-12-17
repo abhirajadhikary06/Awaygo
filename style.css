@@ -650,6 +650,7 @@ header.sticky {
     color: #333;
     /* Text color */
     margin-top: 2rem;
+    margin-left: 3rem;
 }
 
 .testimonial-left h6 {
