@@ -205,23 +205,39 @@ header {
 
 .team-member {
     background: var(--bg-color);
-    /* border: 1px solid var(--border-color); */
     border-radius: 50%;
     padding: 20px;
-    transition: transform 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform-style: preserve-3d; /* Ensures 3D transforms are applied */
+    transition: transform 0.8s ease, width 0.8s ease, height 0.8s ease; /* Smooth transition for rotation and size */
+    transform-origin: center; /* Ensures the div rotates around its center */
+    width: 150px; /* Default width */
+    height: 150px; /* Default height */
 }
 
 .team-member img {
     width: 100%;
     height: auto;
     border-radius: 50%;
-    border: #000000 8px double;
+    backface-visibility: hidden; /* Hide the back side of the image when flipped */
 }
 
 .team-member h3 {
     margin-top: 10px;
     font-size: 1.2rem;
     color: var(--text-color);
+    margin-top: 20px;
+    transition: transform 0.8s ease;
+    transform: translateY(20px); /* Initial position for the name */
+}
+
+.team-member:hover h3 {
+    transform: translateY(0); /* Move the name back into position on hover */
 }
 
 .team-member:hover {
