@@ -1,4 +1,5 @@
-/* General Reset */
+/* Copy from here for the header part to */
+
 * {
     padding: 0;
     margin: 0;
@@ -22,13 +23,12 @@
     --p-font: 1.1rem;
 }
 
-/* Base Body Styling */
 body {
     background: var(--bg-color);
     color: var(--text-color);
+
 }
 
-/* Header Section */
 header {
     position: fixed;
     z-index: 1000;
@@ -40,35 +40,29 @@ header {
     justify-content: space-between;
     background: #000000;
     padding: 30px 15%;
-    transition: all 0.7s ease;
+    transition: all .7s ease;
 }
 
-header.sticky {
-    padding: 14px 15%;
-}
-
-.logo img {
+.logo img{
     width: 100%;
     height: auto;
 }
 
 .navlist {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: auto;
+    width: 100vw;
 }
 
 .navlist a {
+    display: inline-block;
     font-size: var(--p-font);
     font-weight: 500;
     color: #ffffff;
     margin: 0 25px;
-    transition: all 0.7s ease;
+    transition: all .7s ease;
 }
 
 .navlist a:hover {
-    color: var(--main-color);
+    color: #257DE1;
 }
 
 #menu-icon {
@@ -79,10 +73,160 @@ header.sticky {
     display: none;
 }
 
+/* Copy till here to get the header css, Next scroll down to get the footer section +*/
+
 /* About Section */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 15%;
+    background: var(--bg-color);
+    margin-top: 40px;
+}
+
+.about-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.about-text h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.about-text p {
+    font-size: var(--p-font);
+    line-height: 1.6;
+    color: var(--second-color);
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 60px 15%;
+    background: var(--other-color);
+}
+
+.mission-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mission-text h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.mission-text p {
+    font-size: var(--p-font);
+    line-height: 1.6;
+    color: var(--second-color);
+}
+
+/* What We Do Section */
+.what-we-do {
+    padding: 60px 15%;
+    background: var(--bg-color);
+    text-align: center;
+}
+
+.what-we-do h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.do-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.do-item {
+    background: var(--border-color);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.do-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+.do-item p {
+    font-size: var(--p-font);
+    color: var(--second-color);
+}
+
+.do-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Team Section */
+.team-section {
+    padding: 60px 15%;
+    background: var(--other-color);
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.team-member {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.team-member h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
 
 
-/* Footer Section */
+
+/* Footer Section starts from here */
+section {
+    padding: 90px 15% 80px;
+}
+
 .contact {
     background: #161c28;
 }
@@ -96,6 +240,7 @@ header.sticky {
 .f-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Adjust columns to fit the available space */
     gap: 2rem;
     margin-top: 1.5rem;
 }
@@ -109,7 +254,7 @@ header.sticky {
     font-size: 17px;
     color: var(--second-color);
     margin-bottom: 0.9rem;
-    transition: all 0.7s ease;
+    transition: all .7s ease;
 }
 
 .footer-links i {
@@ -144,12 +289,52 @@ header.sticky {
     border-radius: 2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 930px) {
+
+@media(max-width: 1900px) {
+    header {
+        padding: 20px 4%;
+    }
+    header.sticky {
+        padding: 14px 4%;
+    }
+    section {
+        padding: 80px 4% 70px;
+    }
+}
+
+@media(max-width: 1300px) {
+    :root {
+        --h1-font: 4rem;
+        --h2-font: 2.8rem;
+        --p-font: 1rem;
+    }
+}
+
+@media(max-width: 1100px) {
+    header {
+        padding: 20px 4%;
+    }
+    
+    header.sticky {
+        padding: 14px 4%;
+    }
+    
+    section {
+        padding: 80px 4% 70px;
+    }
+    .home-contain {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3rem;
+    }
+}
+
+@media(max-width: 930px) {
     #menu-icon {
         display: block;
     }
-
     .navlist {
         position: absolute;
         width: 100%;
@@ -158,39 +343,70 @@ header.sticky {
         top: 0;
         right: 0;
         left: 100%;
+        display: flex;
         flex-direction: column;
         background: var(--text-color);
-        transition: all 0.7s ease-in-out;
+        transition: all .7s ease-in-out;
     }
-
     .navlist a {
         display: block;
-        margin-bottom: 35px;
+        padding: 0;
+        margin: 0px 0px 35px 0px;
         font-size: 2.1rem;
+        font-weight: 500;
     }
-
     .navlist.open {
         left: 0;
     }
 }
 
-@media (max-width: 800px) {
-    .about-content {
-        flex-direction: column;
+@media(max-width: 800px) {
+    .home {
+        height: 107vh;
     }
-
-    .team-container, .do-container {
-        flex-direction: column;
+    .arrow {
+        display: none;
     }
-
-    .do-item {
+    .h-img {
+        width: 80px;
+        height: 80px;
+    }
+    .h-img img {
+        height: 80px;
+        width: 80px;
         max-width: 100%;
+        object-fit: contain;
+        border-radius: 50%;
     }
-}
-
-@media (max-width: 700px) {
-    .team-container, .testimonial, .do-container {
-        grid-template-columns: 1fr;
+    .home-contain {
         gap: 2rem;
     }
+    .about {
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    }
 }
+
+@media(max-width: 700px) {
+    .testimonial {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .t-img {
+        position: absolute;
+        top: -10%;
+        left: -1%;
+    }
+    .c-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+    .c-img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* Footer section ends here */
