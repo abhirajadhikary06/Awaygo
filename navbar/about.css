@@ -156,11 +156,13 @@ header {
 }
 
 .do-item {
-    background: var(--border-color);
+    background: var(--bg-color);
     padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    border-radius: 20px; /* Unified border-radius */
+    transition: transform 0.3s ease-in-out; /* Added easing for smoother transition */
+    border: 2px solid var(--main-color); /* Added explicit border property for clarity */
 }
+
 
 .do-item h3 {
     font-size: 1.5rem;
