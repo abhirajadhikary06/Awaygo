@@ -82,7 +82,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-image: url(bg_image/background-1.jpg);
+    background-image: url(https://i.ibb.co/xXTMRsn/background-1.jpg);
     background-size: cover;
     background-position: center;
     animation: slide 25s infinite;
@@ -90,37 +90,37 @@ section {
 
 @keyframes slide {
     10% {
-        background-image: url(bg_image/background-2.jpg);
+        background-image: url(https://i.ibb.co/4T5twqR/background-2.jpg);
     }
     20% {
-        background-image: url(bg_image/background-3.jpg);
+        background-image: url(https://i.ibb.co/DKYwZr1/background-3.jpg);
     }
     30% {
-        background-image: url(bg_image/background-4.jpg);
+        background-image: url(https://i.ibb.co/B2Xk5YL/background-4.jpg);
     }
     40% {
-        background-image: url(bg_image/background-5.jpg);
+        background-image: url(https://i.ibb.co/qsKWP4Z/background-5.jpg);
     }
     50% {
-        background-image: url(bg_image/background-6.jpg);
+        background-image: url(https://i.ibb.co/1K7r7Fq/background-6.jpg);
     }
     50% {
-        background-image: url(bg_image/background-7.jpg);
+        background-image: url(https://i.ibb.co/WGC1Vry/background-7.jpg);
     }
     60% {
-        background-image: url(bg_image/background-8.jpg);
+        background-image: url(https://i.ibb.co/555qMVP/background-8.jpg);
     }
     70% {
-        background-image: url(bg_image/background-8.jpg);
+        background-image: url(https://i.ibb.co/7GF0NCN/background-9.jpg);
     }
     80% {
-        background-image: url(bg_image/background-10.png);
+        background-image: url(https://i.ibb.co/0mJT5mk/background-10.png);
     }
     90% {
-        background-image: url(bg_image/background-11.jpg);
+        background-image: url(https://i.ibb.co/qMd1GMW/background-11.jpg);
     }
     100% {
-        background-image: url(bg_image/background-12.png);
+        background-image: url(https://i.ibb.co/mFVWXQb/background-12.png);
     }
 }
 
