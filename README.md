@@ -1,4 +1,9 @@
-Here’s a polished **README** for your Medical Tourism, Conference Tourism, and Destination Wedding booking platform:
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="img/logo.png" width="133px">
+    <img alt="Gradle Logo" src="img/logo(black).png" width="133px">
+  </picture>
+</div>
 
 ---
 
