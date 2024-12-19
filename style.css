@@ -27,6 +27,33 @@ body {
 
 }
 
+/* Custom Cursor */
+#custom-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Cursor Shadow */
+.cursor-shadow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 77, 77, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9998; /* Slightly behind the main cursor */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+
 header {
     position: fixed;
     z-index: 1000;
@@ -930,3 +957,6 @@ header.sticky {
         height: 130px;
     }
 }
+
+
+/* custom cursor - line no. 30 */
