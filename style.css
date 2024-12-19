@@ -104,35 +104,44 @@ section {
 
 .home {
     position: relative;
-    height: 100vh;
+    min-height: 100vh; /* Ensures the container takes up full height */
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    background-image: url(https://i.ibb.co/B2Xk5YL/background-4.jpg);
-    background-size: cover;
-    background-position: center;
-    animation: slide 25s infinite;
+    justify-content: center; /* Centers the content */
+    background-image: url("bg_image/background-1.jpg"); /* Use local image path */
+    background-size: cover; /* Make sure the image covers the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevents image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    animation: slide 40s infinite;
+    transition: background-image 0.5s ease-in-out;
 }
 
+/* Animation for background image change */
 @keyframes slide {
-    20% {
-        background-image: url(https://i.ibb.co/qsKWP4Z/background-5.jpg);
+    15% {
+        background-image: url("bg_image/background-5.jpg");
     }
-    40% {
-        background-image: url(https://i.ibb.co/WGC1Vry/background-7.jpg);
+    30% {
+        background-color: url("bg_image/background-2.jpg");
     }
-    60% {
-        background-image: url(https://i.ibb.co/555qMVP/background-8.jpg);
+    47% {
+        background-image: url("bg_image/background-7.jpg");
     }
-    80% {
-        background-image: url(https://i.ibb.co/qMd1GMW/background-11.jpg);
+    65% {
+        background-image: url("bg_image/background-10.png");
+    }
+    75% {
+        background-image: url("bg_image/background-8.jpg");
+    }
+    85% {
+        background-image: url("bg_image/background-11.jpg");
     }
     100% {
-        background-image: url(https://i.ibb.co/mFVWXQb/background-12.png);
+        background-image: url("bg_image/background-12.png");
     }
 }
-
 /* .home-contain {
     flex-direction: column;
 } */
@@ -141,7 +150,7 @@ section {
     font-size: var(--h1-font);
     font-weight: 800;
     color: var(--bg-color);
-    margin: 10px 0;
+    margin-left: -430px;
 }
 
 .home-text h3 {
@@ -149,6 +158,7 @@ section {
     font-size: 25px;
     font-weight: 600;
     color: var(--bg-color);
+    margin-left: -425px;
 }
 
 .home-text p {
@@ -157,6 +167,13 @@ section {
     color: var(--other-color);
     line-height: 32px;
     margin-bottom: 35px;
+    margin-left: -425px;
+}
+
+.home-btn {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .btn {
@@ -168,7 +185,9 @@ section {
     background: var(--main-color);
     border-radius: 30px;
     margin-right: 20px;
+    margin-top: 50px;
     transition: all .7s ease;
+    margin-left: 0px;
 }
 
 .btn:hover {
@@ -185,6 +204,7 @@ section {
     font-weight: 500;
     border-radius: 30px;
     transition: all .7s ease;
+    margin-left: 0px;
 }
 
 .btn2:hover {
@@ -236,8 +256,18 @@ section {
     border-radius: 30px;
     padding: 8px 16px;
     background-color: transparent;  /* White background for the search bar */
-    width: 350px;  /* Increased width of the search bar */
+    width: 435px;  /* Increased width of the search bar */
     height: 40px;  /* Reduced height (breadth) */
+    transition: border-color 0.3s ease;  /* Smooth transition for border color */
+}
+
+.search-bar:focus-within {
+    border: 3px solid orange;  /* Change the border color of the outer div when any child is focused */
+    background-color: #00000093;
+}
+
+.search-bar input:focus {
+    outline: none;  /* Remove default outline on focus */
 }
 
 .search-input {
