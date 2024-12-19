@@ -1,3 +1,12 @@
+// Loading Animation
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    // Keep the loader visible for 2-3 seconds before hiding it
+    setTimeout(() => {
+        loader.style.display = 'none'; // Hide the loader after 2-3 seconds
+    }, 2000); // 3000 milliseconds (3 seconds)
+});
+
 // Sticky Header
 const header = document.querySelector("header");
 
