@@ -241,33 +241,48 @@ section {
 }
 
 .home-contain {
-    margin-top: 3.5rem;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;  /* Align to the left */
-    gap: 7rem;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100%; /* Full screen height */
+    margin: 0;
 }
 
 .search-bar {
+    position: absolute;
+    margin-top: 0px;
+    margin-bottom: -200px;
     display: flex;
     align-items: center;
-    border: 2px solid #257DE1;  /* Blue border for the search bar */
+    border: 2px solid #257DE1;
     border-radius: 30px;
     padding: 8px 16px;
-    background-color: transparent;  /* White background for the search bar */
-    width: 435px;  /* Increased width of the search bar */
-    height: 40px;  /* Reduced height (breadth) */
-    transition: border-color 0.3s ease;  /* Smooth transition for border color */
+    background-color: transparent;
+    width: 441px;
+    height: 40px;
+    transition: all 0.3s ease; /* Smooth transition for size changes */
 }
 
 .search-bar:focus-within {
-    border: 3px solid orange;  /* Change the border color of the outer div when any child is focused */
-    background-color: #00000093;
+    background-color: #00000093; /* Darken the background when focused */
+    width: 600px; /* Increase width when focused */
+    height: 50px; /* Increase height when focused */
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Optional shadow for focus effect */
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease; /* Smooth transition for focus effect */
 }
 
-.search-bar input:focus {
-    outline: none;  /* Remove default outline on focus */
+/* Animation for Gradient (applied to the .search-bar itself) */
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(45deg, #0099ff, #ffffff, #0099ff);
+    }
+    50% {
+        background: linear-gradient(45deg, #0059b3, #b3e0ff, #0059b3);
+    }
+    100% {
+        background: linear-gradient(45deg, #0099ff, #ffffff, #0099ff);
+    }
 }
 
 .search-input {
@@ -276,50 +291,44 @@ section {
     padding: 8px;
     font-size: 16px;
     border-radius: 30px;
-    width: 100%;  /* Make the input fill the available width */
+    width: 100%;
     color: #ffffff;
-    padding-left: 10px;  /* Add space on the left for the icon */
-    height: 100%;  /* Match the height of the search bar */
+    padding-left: 10px;
+    height: 100%;
     background-color: transparent;
+    transition: font-size 0.5s ease; /* Smooth font-size transition */
 }
 
+/* Default styles for the button and icon */
 .search-btn {
     background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: 20px;
-    color: #257DE1;  /* Icon color */
-    margin-left: -30px;  /* Move the icon inside the input */
+    color: #257DE1; /* Default color for the icon */
+    margin-left: -30px;
+    transition: color 0.5s ease;
+
 }
 
-.search-btn:hover {
-    color: #1a64b0;
+
+.search-btn i {
+    color: #257DE1; /* Default color for the icon */
 }
 
-
-.arrow {
-    position: absolute;
-    top: 35%;
-    right: 30%;
+.search-bar:focus-within .search-input {
+    font-size: 25px; /* Increase font size when focused */
 }
 
-.arrow i {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 90px;
-    width: 90px;
-    background: var(--bg-color);
-    color: var(--text-color);
-    border-radius: 50%;
-    font-size: 35px;
-    transition: all .7s ease;
+/* Change the icon color when input is focused */
+.search-bar:focus-within .search-btn i {
+    color: orange; /* Icon color when input is focused */
+    font-size: 25px;
 }
 
-.arrow i:hover {
-    background: var(--main-color);
-    color: var(--bg-color);
-    transform: scale(0.9);
+/* Optional: Hover effect for the button/icon */
+.search-btn:hover i {
+    color: #1a64b0; /* Change icon color on hover */
 }
 
 header.sticky {
@@ -988,5 +997,193 @@ header.sticky {
     }
 }
 
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 768px) {
+    /* Stack the navigation links vertically on smaller screens */
+    header .navlist {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    header .navlist a {
+        margin-bottom: 10px;
+    }
+
+    /* Adjust the home section text and buttons */
+    .home-text {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .home-text h1 {
+        font-size: 24px;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .home-btn {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .home-btn .btn,
+    .home-btn .btn2 {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Home container search bar */
+    .home-contain .search-bar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .search-input {
+        width: 80%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Destination section */
+    .destination .destination-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destination .row {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .destination .destination-content img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    /* About section */
+    .about {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-left {
+        padding: 20px;
+    }
+
+    .about-mid img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .about-right {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .about-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Package section */
+    .package-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .package-content .box {
+        width: 80%;
+        text-align: center;
+    }
+
+    .package-content .box-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .package-content .box-iinn h3,
+    .package-content .box-iinn h5 {
+        font-size: 18px;
+    }
+
+    /* Testimonial section */
+    .testimonial-left,
+    .testimonial-right {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .testimonial-left h2 {
+        font-size: 24px;
+    }
+
+    .testimonial-right .t-text p {
+        font-size: 16px;
+    }
+}
+
+/* Mobile-specific styles for very small screens (up to 480px) */
+@media only screen and (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    header .logo img {
+        width: 120px;
+    }
+
+    .home-text h1 {
+        font-size: 20px;
+    }
+
+    .home-btn .btn,
+    .home-btn .btn2 {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .home-contain .search-bar {
+        width: 90%;
+    }
+
+    .package-content .box {
+        width: 95%;
+    }
+
+    .testimonial-left h6,
+    .testimonial-right h6 {
+        font-size: 14px;
+    }
+
+    .destination .destination-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-left img,
+    .about-mid img {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-right img {
+        width: 80%;
+        height: auto;
+    }
+}
 
 /* custom cursor - line no. 30 */
