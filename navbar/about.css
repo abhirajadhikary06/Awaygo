@@ -29,6 +29,33 @@ body {
 
 }
 
+/* Custom Cursor */
+#custom-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Cursor Shadow */
+.cursor-shadow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 77, 77, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9998; /* Slightly behind the main cursor */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+
 header {
     position: fixed;
     z-index: 1000;
@@ -198,43 +225,62 @@ header {
 }
 
 .team-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-}
-
-.team-member {
-    background: var(--bg-color);
-    border-radius: 50%;
-    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .team-member {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    transform-style: preserve-3d; /* Ensures 3D transforms are applied */
-    transition: transform 0.8s ease, width 0.8s ease, height 0.8s ease; /* Smooth transition for rotation and size */
-    transform-origin: center; /* Ensures the div rotates around its center */
-    width: 150px; /* Default width */
-    height: 150px; /* Default height */
-}
-
-.team-member img {
-    width: 100%;
-    height: auto;
+    transition: transform 0.3s ease; /* Smooth transition for enlarging */
+  }
+  
+  .image-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    backface-visibility: hidden; /* Hide the back side of the image when flipped */
-}
-
-.team-member h3 {
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Default lighting effect */
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /* Hover effect to enlarge the div */
+  .team-member:hover {
+    transform: scale(1.2); /* Enlarge the team member div */
+  }
+  
+  .team-member h3 {
     margin-top: 10px;
     font-size: 1.2rem;
-    color: var(--text-color);
-    margin-top: 20px;
-    transition: transform 0.8s ease;
-    transform: translateY(20px); /* Initial position for the name */
-}
+    color: #000000;
+  }
+  
+  /* Glow background */
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(0, 0, 255, 0.3) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
 
 .team-member:hover h3 {
     transform: translateY(0); /* Move the name back into position on hover */
