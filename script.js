@@ -1,10 +1,25 @@
 // Loading Animation
 window.addEventListener('load', () => {
     const loader = document.querySelector('.loader');
-    // Keep the loader visible for 2-3 seconds before hiding it
-    setTimeout(() => {
-        loader.style.display = 'none'; // Hide the loader after 2-3 seconds
-    }, 2000); // 3000 milliseconds (3 seconds)
+
+    // Wait for all images in the hero section to load
+    const images = document.querySelectorAll('.hero-section img');
+    const imagePromises = Array.from(images).map((img) =>
+        new Promise((resolve) => {
+            if (img.complete) {
+                resolve();
+            } else {
+                img.addEventListener('load', resolve);
+            }
+        })
+    );
+
+    // Wait until all images are loaded
+    Promise.all(imagePromises).then(() => {
+        setTimeout(() => {
+            loader.style.display = 'none'; // Hide loader after all images load
+        }, 3000); // Ensure the loader stays visible for at least 3 seconds
+    });
 });
 
 // Sticky Header
