@@ -1,27 +1,3 @@
-/*
- // Loading Animation
-window.addEventListener('load', () => {
-    const loader = document.querySelector('.loader');
-    const images = document.querySelectorAll('.hero-section img');
-    const imagePromises = Array.from(images).map((img) =>
-        new Promise((resolve) => {
-            if (img.complete) {
-                resolve();
-            } else {
-                img.addEventListener('load', resolve);
-            }
-        })
-    );
-
-    // Wait until all images are loaded
-    Promise.all(imagePromises).then(() => {
-        setTimeout(() => {
-            loader.style.display = 'none'; 
-        }, 3000);
-    });
-});
-*/
-
 // Sticky Header
 const header = document.querySelector("header");
 
@@ -224,6 +200,3 @@ document.querySelectorAll('*:not(a):not(button):not(input):not(section)').forEac
         customCursor.style.boxShadow = 'none'; // Remove glow effect
     });
 });
-
-
-// cursor animation- line no 111
