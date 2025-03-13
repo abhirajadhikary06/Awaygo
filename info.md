@@ -1,5 +1,6 @@
 # Hospitality
 
+
 Sure! Here are the best medical tourism locations for each country:
 
 1. **Thailand**: **Bangkok** - Known for its high-quality medical facilities and affordable treatments.
